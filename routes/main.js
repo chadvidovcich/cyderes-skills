@@ -4,5 +4,6 @@ const homeController = require("../controllers/home.js");
 
 //Main Routes
 router.get("/", homeController.getIndex);
+router.get("/api/:searchQuery", homeController.getIPInfo);
 
 module.exports = router;
