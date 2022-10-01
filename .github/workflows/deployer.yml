@@ -18,7 +18,7 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
@@ -28,7 +28,7 @@ jobs:
         entry_point: 'cyderes_api'
         region: 'us-west1'
         env_vars: 'WHOISAPIKEY=${{ secrets.WHOISAPIKEY }}'
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        project_id: '${{ secrets.GCP_PROJECT_ID }}'
         description: 'Cyderes skills challenge API'
 
 
