@@ -23,7 +23,7 @@ jobs:
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
-        name: 'cyderes-skills-api'
+        name: 'cyderes-skills-api_v1'
         runtime: 'nodejs16'
         entry_point: 'cyderes_api'
         region: 'us-west1'
