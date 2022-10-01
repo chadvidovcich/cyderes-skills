@@ -1,26 +1,32 @@
-let path = require('path');
-let fetch = require('node-fetch')
+const path = require('path');
+const fetch = require('node-fetch')
 
 module.exports = {
     forwardIndex: (req, res) => {
-        res.redirect('/api/')
+        try {
+            res.redirect('/api/')
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     getIndex: (req, res) => {
-        res.status(200).sendFile(path.join(__dirname, '../views/index.html'))
+        try {
+            res.status(200).sendFile(path.join(__dirname, '../views/index.html'))
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     getIPInfo: async (req, res) => {
-        let searchQuery = req.params.searchQuery
+        const searchQuery = req.params.searchQuery
 
         // Define external API URL
-        const whoIsAPI = `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=${process.env.WHOISAPIKEY}&outputFormat=JSON&domainName=${searchQuery}`
+        const WHO_IS_API = `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=${process.env.WHOISAPIKEY}&outputFormat=JSON&domainName=${searchQuery}`
 
         try {
-            const response = await fetch(whoIsAPI)
-            const json = await response.json()
-
-            res.status(200).send(json)
+            const apiResponse = await fetch(WHO_IS_API)
+            res.status(200).send(apiResponse)
         } catch (error) {
             console.log(error)
         }
