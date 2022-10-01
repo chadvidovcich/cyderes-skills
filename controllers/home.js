@@ -2,6 +2,10 @@ let path = require('path');
 let fetch = require('node-fetch')
 
 module.exports = {
+    forwardIndex: (req, res) => {
+        res.redirect('/api/')
+    },
+
     getIndex: (req, res) => {
         res.status(200).sendFile(path.join(__dirname, '../views/index.html'))
     },
