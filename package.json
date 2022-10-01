@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=DEV nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Chad Vidovcich",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.1"
+    "nodemon": "^2.0.20"
   }
 }
