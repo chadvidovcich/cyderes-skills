@@ -26,7 +26,8 @@ module.exports = {
 
         try {
             const apiResponse = await fetch(WHO_IS_API)
-            res.status(200).send(apiResponse)
+            const json = await apiResponse.json()
+            res.status(200).send(json)
         } catch (error) {
             console.log(error)
         }
