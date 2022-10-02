@@ -10,13 +10,13 @@
   "author": "Chad Vidovcich",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
-    "dotenv": "^16.0.3",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.20"
   }
