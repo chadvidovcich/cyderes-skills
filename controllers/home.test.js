@@ -1,5 +1,3 @@
-process.env.NODE_ENV = "TEST"
-
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 const { cyderes_api } = require('../index')
