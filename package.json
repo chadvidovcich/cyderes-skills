@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=DEV nodemon index.js",
-    "test": "mocha */**.test.js --exit"
+    "test": "NODE_ENV=DEV mocha */**.test.js --exit"
   },
   "author": "Chad Vidovcich",
   "license": "ISC",

@@ -12,7 +12,7 @@ app.use(express.json())
 app.use("/",mainRoutes)
 
 // Express LocalServer for Development
-if (process.env.NODE_ENV === "DEV" || "TEST") {
+if (process.env.NODE_ENV === "DEV") {
   // Use .env file
   require("dotenv").config({ path: "./.env" })
 
