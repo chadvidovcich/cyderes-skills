@@ -2,7 +2,7 @@ process.env.NODE_ENV = "TEST"
 
 const chai = require('chai')
 const chaiHttp = require('chai-http')
-const server = require('../index')
+const { cyderes_api } = require('../index')
 
 // Use chai-http plugin
 chai.use(chaiHttp)
@@ -18,7 +18,7 @@ describe('Server Main Routes', function () {
     describe('"/" Route', () => {
 
         it('GET should redirect', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/').redirects(0)
                 .end((err, res) => {
                     res.should.redirectTo('/api/')
@@ -27,7 +27,7 @@ describe('Server Main Routes', function () {
         })
 
         it('POST should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .post('/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -36,7 +36,7 @@ describe('Server Main Routes', function () {
         })
 
         it('PUT should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .put('/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -45,7 +45,7 @@ describe('Server Main Routes', function () {
         })
 
         it('DELETE should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .delete('/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -57,7 +57,7 @@ describe('Server Main Routes', function () {
     describe('"/api/" Route', () => {
 
         it('GET should return landing page', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/api/')
                 .end((err, res) => {
                     res.should.have.status(200)
@@ -68,7 +68,7 @@ describe('Server Main Routes', function () {
         })
         
         it('GET incorrect URL should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/apis')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -77,7 +77,7 @@ describe('Server Main Routes', function () {
         })
 
         it('POST should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .post('/api/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -86,7 +86,7 @@ describe('Server Main Routes', function () {
         })
 
         it('PUT should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .put('/api/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -94,7 +94,7 @@ describe('Server Main Routes', function () {
                 })
         })
         it('DELETE should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .post('/api/')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -107,7 +107,7 @@ describe('Server Main Routes', function () {
     describe('Query Route', () => {
 
         it('GET query "google.com" should return JSON', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/api/google.com')
                 .end((err, res) => {
                     res.should.have.status(200)
@@ -118,7 +118,7 @@ describe('Server Main Routes', function () {
         })
 
         it('GET query "69.63.176.13" should return JSON', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/api/69.63.176.13')
                 .end((err, res) => {
                     res.should.have.status(200)
@@ -129,7 +129,7 @@ describe('Server Main Routes', function () {
         })
 
         it('GET incorrect domain query should return JSON error', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/api/helloWorld')
                 .end((err, res) => {
                     res.should.have.status(200)
@@ -140,7 +140,7 @@ describe('Server Main Routes', function () {
         })
 
         it('GET incorrect IP address query should return error page', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .get('/api/9999.63.176.13')
                 .end((err, res) => {
                     res.should.have.status(200)
@@ -151,7 +151,7 @@ describe('Server Main Routes', function () {
         })
 
         it('POST "/api/google.com" should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .post('/api/google.com')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -160,7 +160,7 @@ describe('Server Main Routes', function () {
         })
 
         it('PUT "/api/google.com" should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .put('/api/google.com')
                 .end((err, res) => {
                     res.should.have.status(404)
@@ -168,7 +168,7 @@ describe('Server Main Routes', function () {
                 })
         })
         it('DELETE "/api/google.com" should fail', (done) => {
-            chai.request(server)
+            chai.request(cyderes_api)
                 .delete('/api/google.com')
                 .end((err, res) => {
                     res.should.have.status(404)
