@@ -139,7 +139,7 @@ describe('Server Main Routes', function () {
                 })
         })
 
-        it('GET incorrect IP address query should return JSON error', (done) => {
+        it('GET incorrect IP address query should return error page', (done) => {
             chai.request(server)
                 .get('/api/9999.63.176.13')
                 .end((err, res) => {
