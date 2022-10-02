@@ -21,7 +21,6 @@ if (process.env.NODE_ENV === "DEV" || "TEST") {
       console.log(`Local Server is running at http://localhost:${process.env.PORT}`)
   });
 
-  module.exports = app
 }
 
 exports.cyderes_api = app
