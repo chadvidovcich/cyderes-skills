@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "DEV") {
   // Local Server Start
   app.listen(process.env.PORT || 8000, () => {
       console.log(`Local Server is running at http://localhost:${process.env.PORT}`)
-  });
+  })
 
 }
 
