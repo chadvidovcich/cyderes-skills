@@ -107,6 +107,12 @@ Start the server in development mode
   npm run dev
 ```
 
+Run testing suite on local server
+
+```bash
+  npm run test
+```
+
 ## Acknowledgments
 
 ### Authors
