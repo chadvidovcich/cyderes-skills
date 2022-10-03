@@ -15,19 +15,19 @@ Cyderes-skills is a RESTful API built as a skills assessment for the Software En
 
 ## Where to find it
 
-> Check out the serverless GCP deployment [here](https://cyderes-skills-api-yf2nwdd3oq-uw.a.run.app).
+> Check out the serverless GCP deployment [here](https://cyderes-api-gw-aa2v0pof.wl.gateway.dev/api).
 
 ## RESTful API Usage
 This documentation will help you get familiar with the resources of the Cyderes-skills API and show you how to make queries.
 
 ### Using a search query
-API Base URL: `https://cyderes-skills-api-yf2nwdd3oq-uw.a.run.app/api/`
+API Base URL: `https://cyderes-api-gw-aa2v0pof.wl.gateway.dev/api`
 
-API Search Query Format: `https://cyderes-skills-api-yf2nwdd3oq-uw.a.run.app/api/<IP-OR-DOMAIN>`
+API Search Query Format: `https://cyderes-api-gw-aa2v0pof.wl.gateway.dev/api/<IP-OR-DOMAIN>`
 
 *Sample Request*
 ```
-https://cyderes-skills-api-yf2nwdd3oq-uw.a.run.app/api/google.com
+https://cyderes-api-gw-aa2v0pof.wl.gateway.dev/api/google.com
 ```
 ```
 //JSON Response
